@@ -24,9 +24,7 @@ if uploaded_file is not None:
     scaler.fit(file_X) 
     test_X = scaler.transform(file_X)
     predictions = model.predict(test_X)
-    st.line_chart(
-    x = predictions,
-    y = file_Y)
+    st.line_chart(predictions,file_Y)
 
     #st.line_chart(predictions)
     #st.line_chart(file_Y)
