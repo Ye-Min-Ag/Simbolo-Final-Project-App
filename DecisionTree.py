@@ -24,7 +24,14 @@ if uploaded_file is not None:
     scaler.fit(file_X) 
     test_X = scaler.transform(file_X)
     predictions = model.predict(test_X)
-    st.line_chart(predictions,file_Y)
+   
+    if len(predictions) > 0 and len(predictions) == len(file_Y):
+        # Create a DataFrame to make it easier to work with the data
+        results_df = pd.DataFrame({'Predictions': predictions, 'True Values': file_Y})
+        # Line chart
+        st.line_chart(results_df)
+    else:
+        st.error("Error: Predictions and True Values have mismatched lengths or are empty.")
 
     #st.line_chart(predictions)
     #st.line_chart(file_Y)
