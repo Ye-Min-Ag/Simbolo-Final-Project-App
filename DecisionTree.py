@@ -8,10 +8,10 @@ st.title('ML Prediction App')
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
 response = requests.get("https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/my_model.pkl")
 model_content = response.content
-try:
-    model = pickle.loads(model_content)
-except Exception as e:
-    st.error(f"An error occurred while loading the model: {str(e)}")
+#try:
+model = pickle.loads(model_content)
+#except Exception as e:
+    #st.error(f"An error occurred while loading the model: {str(e)}")
 # Load the trained model using pickle
 if uploaded_file is not None:
     # Read the uploaded .csv file
