@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import pickle
-from io import BytesIO
 import requests
+import sklearn
 
 st.title('ML Prediction App')
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
