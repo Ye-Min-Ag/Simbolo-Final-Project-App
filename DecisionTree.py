@@ -29,4 +29,6 @@ if uploaded_file is not None:
     #st.write(predictions)
     #st.write('True values:')
     #st.write(file_Y)
-    st.line_chart(predictions, file_Y)
+    true = test_Y
+    pred = predictions
+    st.line_chart(pred,test_Y)
