@@ -32,12 +32,9 @@ if uploaded_file is not None:
         st.line_chart(results_df)
     else:
         st.error("Error: Predictions and True Values have mismatched lengths or are empty.")
-
-    #st.line_chart(predictions)
-    #st.line_chart(file_Y)
     # Display the predictions
-    #st.write('Predictions:')
-    #st.write(predictions)
+    st.write('Predictions:')
+    st.write(predictions)
     #st.write('True values:')
     #st.write(file_Y)
  
