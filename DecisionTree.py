@@ -24,13 +24,9 @@ if uploaded_file is not None:
     scaler.fit(file_X) 
     test_X = scaler.transform(file_X)
     predictions = model.predict(test_X)
-    chart_data = pd.DataFrame({
-    'col1' : predicitons,
-    'col2' : file_Y})
     st.line_chart(
-    chart_data,
-    x = 'col1',
-    y = 'col2')
+    x = predictions,
+    y = file_Y)
 
     #st.line_chart(predictions)
     #st.line_chart(file_Y)
