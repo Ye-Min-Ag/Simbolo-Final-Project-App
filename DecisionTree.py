@@ -13,18 +13,23 @@ model = pickle.loads(model_content)
 #except Exception as e:
     #st.error(f"An error occurred while loading the model: {str(e)}")
 # Load the trained model using pickle
+from sklearn.preprocessing import MinMaxScaler
+# Create a StandardScaler object
+scaler = MinMaxScaler()
 if uploaded_file is not None:
     # Read the uploaded .csv file
     data = pd.read_csv(uploaded_file)
     file_X = data.iloc[:,0:-1].values
     file_Y = data.iloc[:,-1].values
-    predictions = model.predict(file_X)
+    scaler.fit(file_X) 
+    test_X = scaler.transform(file_X)
+    predictions = model.predict(test_X)
     # Display the predictions
     st.write('Predictions:')
     st.write(predictions)
     st.write('True values:')
     st.write(file_Y)
-    chart_data = pd.DataFrame(
+    '''chart_data = pd.DataFrame(
     predictions,
     columns=['True', 'Predict'])
-    st.line_chart(chart_data)
+    st.line_chart(chart_data)'''
