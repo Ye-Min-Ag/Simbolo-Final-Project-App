@@ -31,4 +31,4 @@ if uploaded_file is not None:
     #st.write(file_Y)
     true = file_Y
     pred = predictions
-    st.line_chart(pred,true)
+    st.line_chart(pred)
