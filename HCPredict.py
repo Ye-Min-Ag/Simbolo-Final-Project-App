@@ -7,6 +7,12 @@ import sklearn
 st.title('Myanmar Regional Poverty Headcount Prediction for a Specific Year')
 user_input = st.text_input("For which year are you going to predict?: ")
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
+st.write('Note: States & Regions must be in this order ')
+data = ['Yangon - 0','Kachin - 1','Kayah - 2', 'Kayin - 3','Chin - 4','Sagaing - 5','Tanintharyi - 6','Bago - 7','Magway - 8','Mandalay - 9','Mon - 10','Rakhine - 11','Shan - 12','Ayeyarwady - 13','NayPyiTawCouncil - 14']
+st.write('States & Regions')
+for item in data:
+    st.write(item)
+
 response = requests.get("https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/my_model.pkl")
 model_content = response.content
 model = pickle.loads(model_content)
