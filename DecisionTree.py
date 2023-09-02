@@ -4,7 +4,8 @@ import pickle
 import requests
 import sklearn
 
-st.title('Myanmar Regional Poverty Headcount Prediction')
+st.title('Myanmar Regional Poverty Headcount Prediction for a Specific Year')
+user_input = st.text_input("For which year are you going to predict?: ")
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
 response = requests.get("https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/my_model.pkl")
 model_content = response.content
@@ -33,7 +34,7 @@ if uploaded_file is not None:
     else:
         st.error("Error: Predictions and True Values have mismatched lengths or are empty.")
     # Display the predictions
-    st.write('Predictions:')
+    st.write(f'Predictions for the year {user_input}:')
     st.write(predictions)
     #st.write('True values:')
     #st.write(file_Y)
