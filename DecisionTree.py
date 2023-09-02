@@ -4,7 +4,7 @@ import pickle
 import requests
 import sklearn
 
-st.title('ML Prediction App')
+st.title('Myanmar Regional Poverty Headcount Prediction')
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
 response = requests.get("https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/my_model.pkl")
 model_content = response.content
