@@ -29,7 +29,7 @@ if uploaded_file is not None:
     st.write(predictions)
     st.write('True values:')
     st.write(file_Y)
-    '''chart_data = pd.DataFrame(
+    chart_data = pd.DataFrame(
     predictions,
     columns=['True', 'Predict'])
-    st.line_chart(chart_data)'''
+    st.line_chart(chart_data)
