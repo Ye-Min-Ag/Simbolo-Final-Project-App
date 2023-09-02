@@ -25,11 +25,8 @@ if uploaded_file is not None:
     test_X = scaler.transform(file_X)
     predictions = model.predict(test_X)
     # Display the predictions
-    st.write('Predictions:')
-    st.write(predictions)
-    st.write('True values:')
-    st.write(file_Y)
-    chart_data = pd.DataFrame(
-    predictions,
-    columns=['True', 'Predict'])
-    st.line_chart(chart_data)
+    #st.write('Predictions:')
+    #st.write(predictions)
+    #st.write('True values:')
+    #st.write(file_Y)
+    st.line_chart(predictions)
