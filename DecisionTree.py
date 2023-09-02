@@ -19,8 +19,8 @@ scaler = MinMaxScaler()
 if uploaded_file is not None:
     # Read the uploaded .csv file
     data = pd.read_csv(uploaded_file)
-    file_X = data.iloc[:,0:-1].values
-    file_Y = data.iloc[:,-1].values
+    file_X = data.iloc[:,0:-2].values
+    file_Y = data.iloc[:,-2].values
     scaler.fit(file_X) 
     test_X = scaler.transform(file_X)
     predictions = model.predict(test_X)
