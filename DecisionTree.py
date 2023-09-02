@@ -6,7 +6,7 @@ import sklearn
 
 st.title('ML Prediction App')
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
-response = requests.get("https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/my_model-2.pkl")
+response = requests.get("https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/my_model.pkl")
 model_content = response.content
 model = pickle.loads(model_content)
 #try:
