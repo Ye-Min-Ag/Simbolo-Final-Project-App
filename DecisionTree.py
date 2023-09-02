@@ -9,7 +9,13 @@ uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
 response = requests.get("https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/my_model-2.pkl")
 model_content = response.content
 #try:
-model = pickle.loads(model_content)
+from sklearn.exceptions import InconsistentVersionWarning
+warnings.simplefilter("error", InconsistentVersionWarning)
+
+try:
+   est = pickle.loads(model_content)
+except InconsistentVersionWarning as w:
+   print(w.original_sklearn_version)
 #except Exception as e:
     #st.error(f"An error occurred while loading the model: {str(e)}")
 # Load the trained model using pickle
