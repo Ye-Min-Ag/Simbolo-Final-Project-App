@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run DecisionTree.py
+web: sh setup.sh && streamlit run HCPredict.py
