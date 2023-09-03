@@ -37,10 +37,12 @@ if uploaded_file is not None:
     for i in image_paths:
         st.image(i, width=500, caption='Scatter Plots')
     st.write('These Heatmap and Scatter Plots reveal our dataset comes with certain data quality challenges. These may include outliers, inconsistencies, noises, etc,.')
+    
     image7 = Image.open('Unknown-7.png')    
     st.image(image7, caption='Feature Importances Visualization for Training Data') 
     image8 = Image.open('Unknown-8.png')    
     st.image(image8, caption='Feature Importances Visualization for Testing Data') 
+    st.write('Also, Machine Learning Models also had different important features which lead to generate inaccurate patterns.')
 
 
 
