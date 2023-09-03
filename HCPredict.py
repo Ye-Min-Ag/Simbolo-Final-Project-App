@@ -4,7 +4,7 @@ import pickle
 import requests
 import sklearn
 
-st.title('Myanmar Regional Poverty Headcount Prediction for a Specific Year')
+st.title('Myanmar Regional Poverty Headcount Prediction & Analysis')
 user_input = st.text_input("For which year are you going to predict?: ")
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
 st.write('Note: States & Regions must be in this order ')
@@ -16,12 +16,7 @@ for item in data:
 response = requests.get("https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/my_model.pkl")
 model_content = response.content
 model = pickle.loads(model_content)
-#try:
-#except Exception as e:
-    #st.error(f"An error occurred while loading the model: {str(e)}")
-# Load the trained model using pickle
 from sklearn.preprocessing import MinMaxScaler
-# Create a StandardScaler object
 scaler = MinMaxScaler()
 if uploaded_file is not None:
     # Read the uploaded .csv file
@@ -31,7 +26,8 @@ if uploaded_file is not None:
     scaler.fit(file_X) 
     test_X = scaler.transform(file_X)
     predictions = model.predict(test_X)
-   
+    st.write(f'Predictions for the year {user_input}:')
+    st.write(predictions)
     if len(predictions) > 0 and len(predictions) == len(file_Y):
         # Create a DataFrame to make it easier to work with the data
         results_df = pd.DataFrame({'Predictions': predictions, 'True Values': file_Y})
@@ -39,9 +35,9 @@ if uploaded_file is not None:
         st.line_chart(results_df)
     else:
         st.error("Error: Predictions and True Values have mismatched lengths or are empty.")
-    # Display the predictions
-    st.write(f'Predictions for the year {user_input}:')
-    st.write(predictions)
+    st.header("Why are Patterns not accurate?")
+    
+  
 
 
 
