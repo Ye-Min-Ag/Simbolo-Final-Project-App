@@ -3,5 +3,3 @@ streamlit
 pandas
 loads
 requests
-PIL
-Image
