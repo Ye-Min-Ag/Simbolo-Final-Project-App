@@ -32,7 +32,7 @@ if uploaded_file is not None:
     st.header("Why are Patterns not accurate?")
 
     from PIL import Image
-    image = image.open('Unknown.png')
+    image = Image.open('Unknown.png')
     st.image(image, caption='Training Data\'s Correlation Heatmap')  
 
 
