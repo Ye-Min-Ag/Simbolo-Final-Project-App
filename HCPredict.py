@@ -34,7 +34,7 @@ if uploaded_file is not None:
     from PIL import Image
     image = Image.open('Unknown.png')
     st.image(image, caption='Training Data\'s Correlation Heatmap')  
-    image_paths = ['Unknown-2.png','Unknown-3.png','Unknown-4.png','Unknown-5.png','Unknown-6.png','Unknown-7.png','Unknown-8.png','Unknown-9.png','Unknown-10.png'
+    image_paths = ['Unknown-2.png','Unknown-3.png','Unknown-4.png','Unknown-5.png']
     for i in image_paths:
         st.image(i, width=100, caption='Scattering')
         
