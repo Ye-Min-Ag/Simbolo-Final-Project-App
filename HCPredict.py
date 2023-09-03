@@ -21,7 +21,7 @@ if uploaded_file is not None:
     scaler.fit(file_X) 
     test_X = scaler.transform(file_X)
     predictions = model.predict(test_X)
-    st.write(f'Predictions for the year 2021:')
+    st.header(f'Predictions for the year 2021:')
     st.write(predictions)
     if len(predictions) > 0 and len(predictions) == len(file_Y):
         # Create a DataFrame to make it easier to work with the data
