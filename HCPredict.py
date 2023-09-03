@@ -7,7 +7,7 @@ from PIL import Image
 
 st.title('2021 Myanmar Regional Poverty Headcount Prediction & Analysis')
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
-st.write('Note: This model is exclusive and need modified CSV file to make prediction')
+st.write('Note: This model is exclusive and need modified CSV file to make predictions.')
 response = requests.get("https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/my_model.pkl")
 model_content = response.content
 model = pickle.loads(model_content)
