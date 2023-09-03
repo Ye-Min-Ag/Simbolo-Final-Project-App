@@ -3,6 +3,8 @@ import pandas as pd
 import pickle
 import requests
 import sklearn
+import geopandas as gpd
+from io import BytesIO
 
 st.title('Myanmar Regional Poverty Headcount Prediction for a Specific Year')
 user_input = st.text_input("For which year are you going to predict?: ")
@@ -16,6 +18,8 @@ for item in data:
 response = requests.get("https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/my_model.pkl")
 model_content = response.content
 model = pickle.loads(model_content)
+response1 = requests.get('https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/gadm41_MMR_1.shp')
+map_content = respose1.content
 #try:
 #except Exception as e:
     #st.error(f"An error occurred while loading the model: {str(e)}")
@@ -44,3 +48,15 @@ if uploaded_file is not None:
     st.write(predictions)
     #st.write('True values:')
     #st.write(file_Y)
+    # Load the Myanmar states/regions data (replace 'myanmar_shapefile.shp' with your file)
+    shapefile_gdf = gpd.read_file(BytesIO(map_content))
+    st.title("My Shapefile Viewer")
+    # Display the loaded GeoDataFrame
+    st.write(shapefile_gdf)
+    # Create a map using the GeoDataFrame
+    st.map(shapefile_gdf)
+
+
+
+
+
