@@ -31,12 +31,12 @@ if uploaded_file is not None:
         st.error("Error: Predictions and True Values have mismatched lengths or are empty.")
     st.header("Why are Patterns not accurate?")
 
-    from PIL import Image
+    '''from PIL import Image
     image = Image.open('Unknown.png')
     st.image(image, caption='Training Data\'s Correlation Heatmap')  
     image_paths = ['Unknown-2.png','Unknown-3.png','Unknown-4.png']
     for i in image_paths:
-        st.image(i, width=100, caption='Scattering')
+        st.image(i, width=100, caption='Scattering')'''
         
 
 
