@@ -3,9 +3,7 @@ import pandas as pd
 import pickle
 import requests
 import sklearn
-import geopandas as gpd
-from io import BytesIO
-import matplotlib.pyplot as plt
+
 st.title('Myanmar Regional Poverty Headcount Prediction for a Specific Year')
 user_input = st.text_input("For which year are you going to predict?: ")
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
@@ -18,8 +16,6 @@ for item in data:
 response = requests.get("https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/my_model.pkl")
 model_content = response.content
 model = pickle.loads(model_content)
-response1 = requests.get('https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/gadm41_MMR_1.shp')
-map_content = respose1.content
 #try:
 #except Exception as e:
     #st.error(f"An error occurred while loading the model: {str(e)}")
@@ -46,18 +42,6 @@ if uploaded_file is not None:
     # Display the predictions
     st.write(f'Predictions for the year {user_input}:')
     st.write(predictions)
-    #st.write('True values:')
-    #st.write(file_Y)
-    # Load the Myanmar states/regions data (replace 'myanmar_shapefile.shp' with your file)
-    shapefile_gdf = gpd.read_file(BytesIO(map_content))
-    # Assuming 'state_region_name' is the common column
-    merged_data = gdf.merge(predicted_data, left_on='state_region_name', right_on='state_region_name', how='left')
-    # Plot the heatmap using predicted values
-    plt.figure(figsize=(12, 8))
-    plt.title(f"Heatmap of Predicted Values for {user_input}")
-    gdf.plot(column='Predictions', cmap='coolwarm', linewidth=0.8, ax=plt.gca(), edgecolor='0.8', legend=True)
-    plt.show()
-    st.pyplot(plt)
 
 
 
