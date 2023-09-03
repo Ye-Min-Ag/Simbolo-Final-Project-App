@@ -37,13 +37,13 @@ if uploaded_file is not None:
     col1,col2,col3=st.beta_columns(3)
     for i, image_path in enumerate(image_paths):
         if i%3==0:
-            with col1
+            with col1:
                 st.image(image_path, width=250, caption='Scatter Plot 1')
         elif i%3==1:
-            with col2
+            with col2:
                 st.image(image_path, width=250, caption='Scatter Plot 2')
         else:
-            with col3
+            with col3:
                 st.image(image_path, width=250, caption='Scatter Plot 3')
         
 
