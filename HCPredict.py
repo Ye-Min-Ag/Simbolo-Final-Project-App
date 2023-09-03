@@ -50,6 +50,8 @@ if uploaded_file is not None:
     st.image(image10, caption='Intercept') 
     st.write('These coefficients and intercept describe relationship between features and label.')
 
+    st.write('Overall, due to limitations, prediction patterns didn\'t cope with true values due to irregularities and lack of cleanliness in data, which in turn lead to influencing features and incorrect weights.')
+
 
 
 
