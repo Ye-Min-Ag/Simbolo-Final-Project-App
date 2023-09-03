@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 import requests
 import sklearn
-from PIL import Image
+#from PIL import Image
 
 st.title('2021 Myanmar Regional Poverty Headcount Prediction & Analysis')
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
@@ -31,11 +31,11 @@ if uploaded_file is not None:
     else:
         st.error("Error: Predictions and True Values have mismatched lengths or are empty.")
     st.header("Why are Patterns not accurate?")
-    image = Image.open('Unknown.png')
-    st.image(image, caption='Testing Data\'s Correlation Heatmap')  
-    image_paths = ['Unknown-2.png','Unknown-3.png','Unknown-4.png']
-    for i in image_paths:
-        st.image(i, width=500, caption='Scatter Plots')
+    #image = Image.open('Unknown.png')
+    #st.image(image, caption='Testing Data\'s Correlation Heatmap')  
+    #image_paths = ['Unknown-2.png','Unknown-3.png','Unknown-4.png']
+    #for i in image_paths:
+        #st.image(i, width=500, caption='Scatter Plots')
     st.write('These Heatmap and Scatter Plots reveal our dataset comes with certain data quality challenges. These may include outliers, inconsistencies, noises, etc.')
         
 
