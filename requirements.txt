@@ -4,3 +4,4 @@ pandas
 loads
 requests
 Image
+PIL
