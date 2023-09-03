@@ -34,8 +34,17 @@ if uploaded_file is not None:
     image = Image.open('Unknown.png')
     st.image(image, caption='Training Data\'s Correlation Heatmap')  
     image_paths = ['Unknown-2.png','Unknown-3.png','Unknown-4.png']
-    for i in image_paths:
-        st.image(i, width=100, caption='Scattering')
+    col1,col2,col3=st.beta_columns(3)
+    for i, image_path in enumerate(image_paths):
+        if i%3==0:
+            with col1
+                st.image(image_path, width=250, caption='Scatter Plot 1')
+        elif i%3==1:
+            with col2
+                st.image(image_path, width=250, caption='Scatter Plot 2')
+        else:
+            with col3
+                st.image(image_path, width=250, caption='Scatter Plot 3')
         
 
 
