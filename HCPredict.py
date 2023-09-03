@@ -34,7 +34,10 @@ if uploaded_file is not None:
     from PIL import Image
     image = Image.open('Unknown.png')
     st.image(image, caption='Training Data\'s Correlation Heatmap')  
-
+    image_paths = ['Unknown.png','Unknown-2.png']
+    for i in image_paths:
+        st.image(i, width=400, caption='Scattering')
+        
 
 
 
