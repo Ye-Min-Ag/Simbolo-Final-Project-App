@@ -36,7 +36,7 @@ if uploaded_file is not None:
     image_paths = ['Unknown-2.png','Unknown-3.png','Unknown-4.png']
     for i in image_paths:
         st.image(i, width=500, caption='Scatter Plots')
-    st.write('These Heatmap and Scatter Plots reveal our dataset comes with certain data quality challenges. These may include outliers, inconsistencies, noises, etc.')
+    st.write('These Heatmap and Scatter Plots reveal our dataset comes with certain data quality challenges. These may include outliers, inconsistencies, noises, etc,.')
         
 
 
