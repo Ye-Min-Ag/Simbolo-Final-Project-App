@@ -5,7 +5,6 @@ import requests
 import sklearn
 
 st.title('2021 Myanmar Regional Poverty Headcount Prediction & Analysis')
-user_input = st.text_input("For which year are you going to predict?: ")
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
 
 response = requests.get("https://github.com/Ye-Min-Ag/Simbolo-Final-Project-App/raw/main/my_model.pkl")
@@ -21,7 +20,7 @@ if uploaded_file is not None:
     scaler.fit(file_X) 
     test_X = scaler.transform(file_X)
     predictions = model.predict(test_X)
-    st.write(f'Predictions for the year {user_input}:')
+    st.write(f'Predictions for the year 2021:')
     st.write(predictions)
     if len(predictions) > 0 and len(predictions) == len(file_Y):
         # Create a DataFrame to make it easier to work with the data
