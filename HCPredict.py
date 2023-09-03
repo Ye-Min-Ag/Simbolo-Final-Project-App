@@ -31,6 +31,7 @@ if uploaded_file is not None:
     else:
         st.error("Error: Predictions and True Values have mismatched lengths or are empty.")
     st.header("Why are Patterns not accurate?")
+    
     image = Image.open('Unknown.png')
     st.image(image, caption='Testing Data\'s Correlation Heatmap')  
     image_paths = ['Unknown-2.png','Unknown-3.png','Unknown-4.png']
