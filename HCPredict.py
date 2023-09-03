@@ -44,6 +44,12 @@ if uploaded_file is not None:
     st.image(image8, caption='Feature Importances Visualization for Testing Data') 
     st.write('Also, Machine Learning Models also had different important features which lead to generate inaccurate patterns.')
 
+    image9 = Image.open('Unknown-9.png')    
+    st.image(image9, caption='weights (coefficients)') 
+    image10 = Image.open('Unknown-10.png')    
+    st.image(image10, caption='Intercept') 
+    st.write('These coefficients and intercept describe relationship between features and label.')
+
 
 
 
