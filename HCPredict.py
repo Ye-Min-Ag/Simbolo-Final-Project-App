@@ -33,7 +33,7 @@ if uploaded_file is not None:
 
     from PIL import Image
     image = Image.open('Unknown.png')
-    st.image(image, caption='Training Data\'s Correlation Heatmap')  
+    st.image(image, width=400, height=300, caption='Training Data\'s Correlation Heatmap')  
 
 
 
